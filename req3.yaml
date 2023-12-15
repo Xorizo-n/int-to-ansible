@@ -9,7 +9,7 @@
      ios_config:
        parents: ip access-list extended REQ3
        lines:
-         - permit tcp 192.168.20.20 host 192.168.10.10 eq www
+         - permit tcp 192.168.20.0 0.0.0.255 host 192.168.10.10 eq www
          - permit tcp any any eq www
          - permit ip any any
                   
