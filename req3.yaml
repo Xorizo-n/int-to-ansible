@@ -13,11 +13,11 @@
          - permit tcp any any eq www
          - permit ip any any
                   
-   - name: Apply new ACL to R1 Eth0/1 in
+   - name: Apply new ACL to R1 Eth0/0.10 out
      ios_config:
-       parents: int e0/1
+       parents: int e0/0.10
        lines:
-         - ip access-group REQ3 in
+         - ip access-group REQ3 out
 
    - name: Check result
      ios_command:
