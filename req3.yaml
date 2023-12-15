@@ -10,14 +10,14 @@
        parents: ip access-list extended REQ3
        lines:
          - permit tcp 192.168.20.0 0.0.0.255 host 192.168.10.10 eq www
-         - permit tcp any any eq www
+         - deny tcp any any eq www
          - permit ip any any
                   
-   - name: Apply new ACL to R1 Eth0/0.10 out
+   - name: Apply new ACL to R1 Eth0/1 in
      ios_config:
-       parents: int e0/0.10
+       parents: int e0/1
        lines:
-         - ip access-group REQ3 out
+         - ip access-group REQ3 in
 
    - name: Check result
      ios_command:
